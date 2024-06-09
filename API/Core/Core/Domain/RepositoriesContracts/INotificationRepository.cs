@@ -1,4 +1,6 @@
-﻿namespace Core.Domain.RepositoriesContracts
+﻿using Core.DTO;
+
+namespace Core.Domain.RepositoriesContracts
 {
 	/// <summary>
 	/// NotificationRepository contract
@@ -17,5 +19,11 @@
 		/// <param name="username">Username to search</param>
 		/// <returns>All the notifications for provided user</returns>
 		Task<List<Notification>> GetUsersNotifications(string username);
+		/// <summary>
+		/// Converts AddNotificationDTO request into Notification entity
+		/// </summary>
+		/// <param name="request">Request to convert</param>
+		/// <returns>Notification object</returns>
+		Notification ToNotification(AddNotificationDTO request);
 	}
 }
