@@ -7,6 +7,9 @@ namespace Core.DTO
 		[Required(ErrorMessage = "User name can not be blank")]
 		public string UserName { get; set; } = null!;
 
+		[Required(ErrorMessage = "User name can not be blank")]
+		public string FullName { get; set; } = null!;
+
 		[Required(ErrorMessage = "Email can not be blank")]
 		[EmailAddress(ErrorMessage = "Email have to be in the right format")]
 		public string Email { get; set; } = null!;

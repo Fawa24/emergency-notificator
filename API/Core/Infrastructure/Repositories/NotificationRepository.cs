@@ -34,9 +34,10 @@ namespace Infrastructure.Repositories
 			return new Notification()
 			{
 				NotificationId = Guid.NewGuid(),
+				Title = request.Title,
 				Message = request.Message,
 				SenderId = _db.Users.FirstOrDefault(user => user.UserName == request.Sender).Id,
-				RecipientId = _db.Users.FirstOrDefault(user => user.UserName == request.Sender).Id
+				RecipientId = _db.Users.FirstOrDefault(user => user.UserName == request.Recipient).Id
 			};
 		}
 	}
